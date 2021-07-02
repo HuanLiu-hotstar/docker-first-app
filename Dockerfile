@@ -11,5 +11,5 @@ COPY . .
 
 RUN GOOS=linux GOARCH=amd64  make
 
-ENTRYPOINT ["/app/docker-first-app"]
+ENTRYPOINT ["/app/main"]
 #ENTRYPOINT ["/app/docker-first-app"]
