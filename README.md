@@ -16,7 +16,7 @@
 - Dockerfile used to generate an image
 - server will run in container based image
 
-```sh
+```Docker
 FROM golang:1.16 # inherit the base images
 
 WORKDIR /app ## location the server locate
@@ -39,7 +39,7 @@ ENTRYPOINT ["/app/main"] ## the executable files will be executed
 
 ## build image
 
-```sh 
+```shell
 # 1. build image for docker engine 
 
 docker build -t golang-test:v1 . 
