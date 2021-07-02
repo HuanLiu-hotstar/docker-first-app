@@ -1,6 +1,6 @@
 all:test
 
 test:
-	go build 
+	go build -o main *.go
 clean:
-	rm docker-first-app
+	rm main
