@@ -17,6 +17,7 @@
 - server will run in container based image
 
 ```Docker
+
 FROM golang:1.16 # inherit the base images
 
 WORKDIR /app ## location the server locate
@@ -30,10 +31,11 @@ COPY . . ## copy all files to workdir, maybe some configure files
 
 ## compile source code & generate the executable file
 ## this will generate an executable file named  main ,details see Makefile
+## you can also use other shell comand to compile server
 RUN GOOS=linux GOARCH=amd64  make   
 
 ## start the server 
-ENTRYPOINT ["/app/main"] ## the executable files will be executed
+ENTRYPOINT ["/app/main"] ## start server command 
 
 ```
 
@@ -52,7 +54,7 @@ docker images
 ## 3. run an instance of the image 
 docker run -d -p 5000:9090 golang-test:v1
 
-# -d: means run the instance in backgroup
+# -d: means run the instance in backgroud
 # -p: map localhost port to instance port in docker engine
 # last one parameters is image name
 
